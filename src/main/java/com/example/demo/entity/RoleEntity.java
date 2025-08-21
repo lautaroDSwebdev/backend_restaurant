@@ -13,6 +13,7 @@ public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRole;
+
     @Enumerated(EnumType.STRING)
     private ERole roleName;
 
