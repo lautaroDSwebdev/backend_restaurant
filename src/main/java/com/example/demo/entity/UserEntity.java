@@ -8,11 +8,11 @@ import lombok.*;
 
 import java.util.Set;
 
-@Getter @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
+@Entity
 public class UserEntity {
 
     @Id
@@ -36,4 +36,44 @@ public class UserEntity {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleEntity> roles;
+
+    public @Email @NotBlank @Size(max = 50) String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@Email @NotBlank @Size(max = 50) String email) {
+        this.email = email;
+    }
+
+    public @NotBlank String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@NotBlank String password) {
+        this.password = password;
+    }
+
+    public Set<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<RoleEntity> roles) {
+        this.roles = roles;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public @NotBlank @Size(max = 30) String getUsername() {
+        return username;
+    }
+
+    public void setUsername(@NotBlank @Size(max = 30) String username) {
+        this.username = username;
+    }
 }

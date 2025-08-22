@@ -30,14 +30,24 @@ public class DemoApplication {
     CommandLineRunner init() {
         return args -> {
 
-            UserEntity user_ent2 = UserEntity.builder()
-                    .email("guillermo2@gmail.com")
-                    .username("guillermo2")
-                    .password(passw_encoder.encode("7654747"))
-                    .roles(Set.of(RoleEntity.builder()
-                            .roleName(ERole.valueOf(ERole.CUSTOMER.name())).build()))
-                    .build();
-            user_repo.save(user_ent2);
+//            UserEntity user_ent = UserEntity.builder()
+//                    .email("guillermo2@gmail.com")
+//                    .username("guillermo2")
+//                    .password(passw_encoder.encode("7654747"))
+//                    .roles(Set.of(RoleEntity.builder()
+//                            .roleName(ERole.valueOf(ERole.ADMIN.name())).build()))
+//                    .build();
+
+//            UserEntity user_ent2 = UserEntity.builder()
+//                    .email("mailexample@gmail.com")
+//                    .username("rodrigo arias")
+//                    .password(passw_encoder.encode("5432"))
+//                    .roles(Set.of(RoleEntity.builder()
+//                            .roleName(ERole.valueOf(ERole.ADMIN.name())).build()))
+//                    .build();
+//
+////            user_repo.save(user_ent);
+//            user_repo.save(user_ent2);
         };
     }
 }

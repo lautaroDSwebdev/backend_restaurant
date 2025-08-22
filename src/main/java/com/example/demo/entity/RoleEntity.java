@@ -3,11 +3,11 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
+@Entity
 public class RoleEntity {
 
     @Id
@@ -16,5 +16,21 @@ public class RoleEntity {
 
     @Enumerated(EnumType.STRING)
     private ERole roleName;
+
+    public Long getIdRole() {
+        return idRole;
+    }
+
+    public void setIdRole(Long idRole) {
+        this.idRole = idRole;
+    }
+
+    public ERole getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(ERole roleName) {
+        this.roleName = roleName;
+    }
 
 }
