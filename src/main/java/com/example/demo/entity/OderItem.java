@@ -13,15 +13,20 @@ import java.util.List;
 @AllArgsConstructor
 //@Builder
 @Entity
-public class OrdersStateEntity {
-
+public class OderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
-    private int status;
+    private int Quantity;
 
-//    oder_item
+    @NotBlank
+    private int price;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrdersStateEntity> ListOrdersStates;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<MenuDishEntity> ListDiches;
 }

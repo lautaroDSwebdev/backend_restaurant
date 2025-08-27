@@ -38,27 +38,27 @@ public class UserController {
         return ResponseEntity.ok(users_get);
     }
 
-    @PostMapping("/createUser")
-    public ResponseEntity<?> PostUser(@Valid @RequestBody CreateUserDTO createUserDto){
+//    @PostMapping("/createUser")
+//    public ResponseEntity<?> PostUser(@Valid @RequestBody CreateUserDTO createUserDto){
+//
+//        Set<RoleEntity> roles = createUserDto.getRoles().stream()
+//                .map(role -> RoleEntity.builder().roleName(ERole.valueOf(role))
+//
+//                        .build()).collect(Collectors.toSet());
+//
+//        UserEntity entity_user = UserEntity.builder()
+//                .username(createUserDto.getUsername())
+////y de esta manera hacemos que lo tome la contraseña de usuario
+//                .password(pass_encode.encode(createUserDto.getPassword()))
+//                .email(createUserDto.getEmail())
+//                .roles(roles)
+//                .build();
+//
+//        user_repo.save(entity_user);
+//        return ResponseEntity.ok(entity_user);
+//    }
 
-        Set<RoleEntity> roles = createUserDto.getRoles().stream()
-                .map(role -> RoleEntity.builder().roleName(ERole.valueOf(role))
-
-                        .build()).collect(Collectors.toSet());
-
-        UserEntity entity_user = UserEntity.builder()
-                .username(createUserDto.getUsername())
-//y de esta manera hacemos que lo tome la contraseña de usuario
-                .password(pass_encode.encode(createUserDto.getPassword()))
-                .email(createUserDto.getEmail())
-                .roles(roles)
-                .build();
-
-        user_repo.save(entity_user);
-        return ResponseEntity.ok(entity_user);
-    }
-
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete-user/{id}")
     public String DeleteUser(@PathVariable Long id){
         user_repo.deleteById(id);
         return "Usuario eliminado";
