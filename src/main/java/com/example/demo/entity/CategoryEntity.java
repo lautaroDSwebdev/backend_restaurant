@@ -21,6 +21,6 @@ public class CategoryEntity {
     @NotBlank
     private String category_name;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MenuDishEntity> ListMenuDishes;
 }

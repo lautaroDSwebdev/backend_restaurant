@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.entity.TablesRestaurantEntity;
 import com.example.demo.service.Impl.TablesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,24 +16,24 @@ public class TablesController {
 
 
 
-    @GetMapping("/service")
-    public List<TablesRestaurantEntity> GetTables(){
+    @GetMapping("/tables")
+    public ResponseEntity<List<TablesRestaurantEntity>>GetTables(){
         List<TablesRestaurantEntity> get_tables = tables_serv.GetTables();
-        return get_tables;
+        return ResponseEntity.ok(get_tables);
     }
 
-    @PostMapping("/service")
+    @PostMapping("/tables")
     public String PostTables(@RequestBody TablesRestaurantEntity e){
         tables_serv.PostTables(e);
         return "mesa creada";
     }
 
-    @PutMapping("/service")
+    @PutMapping("/tables")
     public TablesRestaurantEntity PutTables(@RequestBody TablesRestaurantEntity e){
         tables_serv.PutTables(e);
         return tables_serv.FindTables(e.getId());
     }
-    @DeleteMapping("/service/{id}")
+    @DeleteMapping("/tables/{id}")
     public String DeleteTables(@PathVariable Long id){
         tables_serv.DeleteTables(id);
         return "Mesada eliminada";

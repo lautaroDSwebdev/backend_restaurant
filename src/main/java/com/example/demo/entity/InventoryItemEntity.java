@@ -1,8 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -16,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class InventoryItemEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @NotBlank
@@ -28,5 +26,8 @@ public class InventoryItemEntity {
     @NotBlank
     private String unit;
 
+    @ManyToOne
+    @JoinColumn(name = "inventiry_dish_id")
+    private MenuDishEntity menudish;
 
 }

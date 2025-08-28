@@ -30,6 +30,16 @@ public class ReviewsEntity {
     @NotBlank
     private String date;
 
+    @ManyToOne
+    @JoinColumn(name = "user_reviews_id")
+    private UserEntity user;
+
+    @ManyToOne
+    @JoinColumn(name = "menu_dish_reviews_id")
+    private MenuDishEntity menu_dish;
+
+
+
     //    user_id
 
 //    menu_dish_id

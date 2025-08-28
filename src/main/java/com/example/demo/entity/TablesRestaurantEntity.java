@@ -1,9 +1,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,10 +19,10 @@ public class TablesRestaurantEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     private int numberOfTable;
 
-    @NotBlank
+    @NotNull(message = "la capacidad no puede ser nula")
+    @Positive(message = "La capacidad debe ser un número mayor a 0")
     private int capacity;
 
     @NotBlank
@@ -32,4 +30,46 @@ public class TablesRestaurantEntity {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ReservationsEntity> reservationsTable;
+
+    @NotNull(message = "la capacidad no puede ser nula")
+    @Positive(message = "La capacidad debe ser un número mayor a 0")
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(@NotNull(message = "la capacidad no puede ser nula") @Positive(message = "La capacidad debe ser un número mayor a 0") int capacity) {
+        this.capacity = capacity;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public @NotBlank String getLocation() {
+        return location;
+    }
+
+    public void setLocation(@NotBlank String location) {
+        this.location = location;
+    }
+
+    public int getNumberOfTable() {
+        return numberOfTable;
+    }
+
+    public void setNumberOfTable(int numberOfTable) {
+        this.numberOfTable = numberOfTable;
+    }
+
+    public List<ReservationsEntity> getReservationsTable() {
+        return reservationsTable;
+    }
+
+    public void setReservationsTable(List<ReservationsEntity> reservationsTable) {
+        this.reservationsTable = reservationsTable;
+    }
 }

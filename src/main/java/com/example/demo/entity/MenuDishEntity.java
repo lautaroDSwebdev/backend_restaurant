@@ -25,17 +25,13 @@ public class MenuDishEntity {
 
 
     @NotBlank
-    @Size(max = 50)
-    private String email;
-
-    @NotBlank
     private Float price;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
-    private CategoryEntity category_dish;
+    private CategoryEntity category_id;
 
-    @OneToMany
+    @OneToMany(mappedBy = "menudish")
     private List<InventoryItemEntity> inventory_intem;
 //   category_id
 }

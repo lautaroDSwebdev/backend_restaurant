@@ -29,4 +29,46 @@ public class OderItem {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<MenuDishEntity> ListDiches;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<MenuDishEntity> getListDiches() {
+        return ListDiches;
+    }
+
+    public void setListDiches(List<MenuDishEntity> listDiches) {
+        ListDiches = listDiches;
+    }
+
+    public List<OrdersStateEntity> getListOrdersStates() {
+        return ListOrdersStates;
+    }
+
+    public void setListOrdersStates(List<OrdersStateEntity> listOrdersStates) {
+        ListOrdersStates = listOrdersStates;
+    }
+
+    @NotBlank
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(@NotBlank int price) {
+        this.price = price;
+    }
+
+    @NotBlank
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(@NotBlank int quantity) {
+        Quantity = quantity;
+    }
 }
