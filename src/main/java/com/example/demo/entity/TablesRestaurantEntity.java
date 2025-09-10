@@ -28,7 +28,7 @@ public class TablesRestaurantEntity {
     @NotBlank
     private String location;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "table_reservation")
     private List<ReservationsEntity> reservationsTable;
 
     @NotNull(message = "la capacidad no puede ser nula")
@@ -65,11 +65,5 @@ public class TablesRestaurantEntity {
         this.numberOfTable = numberOfTable;
     }
 
-    public List<ReservationsEntity> getReservationsTable() {
-        return reservationsTable;
-    }
 
-    public void setReservationsTable(List<ReservationsEntity> reservationsTable) {
-        this.reservationsTable = reservationsTable;
-    }
 }

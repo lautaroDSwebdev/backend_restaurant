@@ -8,8 +8,8 @@ import java.util.List;
 public interface IOrderStateService {
 
     public List<OrdersStateEntity> GetOrdersState();
-    public void PostOrdersStateEntity(OrdersStateEntity e);
-    public void PutOrdersStateEntity(OrdersStateEntity e);
-    public void DeleteOrdersStateEntity(Long id);
-    public OrdersStateEntity FindOrdersStateEntity(Long id);
+    public void PostOrdersState(OrdersStateEntity e);
+    public void PutOrdersState(OrdersStateEntity e);
+    public void DeleteOrdersState(Long id);
+    public OrdersStateEntity FindOrdersState(Long id);
 }

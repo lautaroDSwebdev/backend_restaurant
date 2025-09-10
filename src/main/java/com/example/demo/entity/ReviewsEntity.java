@@ -20,8 +20,8 @@ public class ReviewsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+//    @Size(max = 5)
     @NotBlank
-    @Size(max = 5)
     private int range;
 
     @NotBlank
@@ -30,13 +30,18 @@ public class ReviewsEntity {
     @NotBlank
     private String date;
 
+//    @ManyToOne
+//    @JoinColumn(name = "userentity_reviews")
+//    private UserEntity user;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "user_reviews_column")
+//    private UserEntity user_review;
+//
     @ManyToOne
-    @JoinColumn(name = "user_reviews_id")
-    private UserEntity user;
-
-    @ManyToOne
-    @JoinColumn(name = "menu_dish_reviews_id")
+    @JoinColumn(name = "menu_dish_reviews")
     private MenuDishEntity menu_dish;
+
 
 
 
@@ -44,4 +49,36 @@ public class ReviewsEntity {
 
 //    menu_dish_id
 
+    public @NotBlank String getComent() {
+        return coment;
+    }
+
+    public void setComent(@NotBlank String coment) {
+        this.coment = coment;
+    }
+
+    public @NotBlank String getDate() {
+        return date;
+    }
+
+    public void setDate(@NotBlank String date) {
+        this.date = date;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @NotBlank
+    public int getRange() {
+        return range;
+    }
+
+    public void setRange(@NotBlank int range) {
+        this.range = range;
+    }
 }

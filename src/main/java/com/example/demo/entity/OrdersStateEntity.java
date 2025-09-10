@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+//import org.springframework.security.core.userdetails.User;
 
 import java.util.List;
 
@@ -21,6 +22,11 @@ public class OrdersStateEntity {
 
     @NotBlank
     private int status;
+
+
+//    @ManyToOne
+//    @JoinColumn(name = "user_orderstate_id")
+//    private UserEntity user_orderstate;
 
     public Long getId() {
         return id;

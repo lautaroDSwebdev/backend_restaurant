@@ -1,15 +1,15 @@
 package com.example.demo;
 
-import com.example.demo.entity.ERole;
-import com.example.demo.entity.RoleEntity;
-import com.example.demo.entity.UserEntity;
-import com.example.demo.repository.UserRepo;
+//import com.example.demo.entity.ERole;
+//import com.example.demo.entity.RoleEntity;
+//import com.example.demo.entity.UserEntity;
+//import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Set;
 
@@ -24,12 +24,11 @@ public class DemoApplication {
 //    PasswordEncoder passw_encoder;
 //
 //    @Autowired
-//    UserRepo user_repo;
+//    UserRepository user_repo;
 //
 //    @Bean
 //    CommandLineRunner init() {
 //        return args -> {
-//
 //           UserEntity user_ent = UserEntity.builder()
 //                   .email("guillermo2@gmail.com")
 //                   .username("guillermo2")

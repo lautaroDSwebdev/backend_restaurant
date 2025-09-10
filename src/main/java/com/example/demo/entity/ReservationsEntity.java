@@ -24,6 +24,14 @@ public class ReservationsEntity {
 //    one to one
     private String status;
 
+//    @ManyToOne
+//    @JoinColumn(name = "user_reservations_id")
+//    private UserEntity user_res;
+
+    @ManyToOne
+    @JoinColumn(name = "table_reservation")
+    private TablesRestaurantEntity table_reservation;
+
     public String getDate_time() {
         return date_time;
     }

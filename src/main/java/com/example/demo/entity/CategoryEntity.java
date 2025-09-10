@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 public class CategoryEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +22,6 @@ public class CategoryEntity {
     @NotBlank
     private String category_name;
 
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "category_id")
     private List<MenuDishEntity> ListMenuDishes;
 }

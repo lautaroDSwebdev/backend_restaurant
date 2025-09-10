@@ -21,22 +21,22 @@ public class OrderStateServiceImpl implements IOrderStateService {
     }
 
     @Override
-    public void PostOrderState(OrdersStateEntity e) {
+    public void PostOrdersState(OrdersStateEntity e) {
         order_repo.save(e);
     }
 
     @Override
-    public void PutOrderState(OrdersStateEntity e) {
-        this.PostOrderState(e);
+    public void PutOrdersState(OrdersStateEntity e) {
+        this.PostOrdersState(e);
     }
 
     @Override
-    public void DeleteOrderState(Long id) {
+    public void DeleteOrdersState(Long id) {
         order_repo.deleteById(id);
     }
 
     @Override
-    public OrdersStateEntity FindOrderState(Long id) {
+    public OrdersStateEntity FindOrdersState(Long id) {
         OrdersStateEntity find_order = order_repo.findById(id).orElse(null);
         return find_order;
     }

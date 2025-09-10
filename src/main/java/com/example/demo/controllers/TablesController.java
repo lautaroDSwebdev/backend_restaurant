@@ -14,8 +14,6 @@ public class TablesController {
     @Autowired
     private TablesServiceImpl tables_serv;
 
-
-
     @GetMapping("/tables")
     public ResponseEntity<List<TablesRestaurantEntity>>GetTables(){
         List<TablesRestaurantEntity> get_tables = tables_serv.GetTables();

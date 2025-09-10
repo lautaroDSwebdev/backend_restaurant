@@ -17,24 +17,24 @@ public class OrderStateController {
     @GetMapping
     public List<OrdersStateEntity> GetOrdersState(){
         List<OrdersStateEntity> get_orders_state = order_service.GetOrdersState();
-        return order_service.GetOrdersState();
+        return get_orders_state;
     }
 
     @PostMapping
     public String PostOrderState(@RequestBody OrdersStateEntity e){
-        order_service.PostOrderState(e);
+        order_service.PostOrdersState(e);
         return "orden creada";
     }
 
     @PutMapping
     public OrdersStateEntity PutOrdersState(@RequestBody OrdersStateEntity e){
-        order_service.PutOrderState(e);
-        return order_service.FindOrderState(e.getId());
+        order_service.PutOrdersState(e);
+        return order_service.FindOrdersState(e.getId());
     }
 
     @DeleteMapping("/{id}")
     public String DeleteOrdersState(@PathVariable Long id){
-        order_service.DeleteOrderState(id);
+        order_service.DeleteOrdersState(id);
         return "orden eliminada";
     }
 }
