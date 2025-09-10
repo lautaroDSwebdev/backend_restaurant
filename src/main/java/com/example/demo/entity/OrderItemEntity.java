@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

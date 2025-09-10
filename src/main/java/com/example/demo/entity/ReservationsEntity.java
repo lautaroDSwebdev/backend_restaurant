@@ -6,10 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+//@Data
+//@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
 @Entity
 public class ReservationsEntity {
 
@@ -29,7 +29,7 @@ public class ReservationsEntity {
 //    private UserEntity user_res;
 
     @ManyToOne
-    @JoinColumn(name = "table_reservation")
+    @JoinColumn(name = "table_reservation_id")
     private TablesRestaurantEntity table_reservation;
 
     public String getDate_time() {

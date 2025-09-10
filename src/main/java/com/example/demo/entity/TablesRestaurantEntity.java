@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
+//@Data
+//@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
 @Entity
 public class TablesRestaurantEntity {
 

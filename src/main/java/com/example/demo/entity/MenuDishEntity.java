@@ -1,8 +1,6 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-//import com.example.demo.controllers.OrderItem;
-//import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -10,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

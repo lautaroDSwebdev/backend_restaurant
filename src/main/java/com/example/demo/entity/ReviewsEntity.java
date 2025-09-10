@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -20,7 +20,7 @@ public class ReviewsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Size(max = 5)
+    //    @Size(max = 5)
     @NotBlank
     private int range;
 
@@ -30,7 +30,7 @@ public class ReviewsEntity {
     @NotBlank
     private String date;
 
-//    @ManyToOne
+    //    @ManyToOne
 //    @JoinColumn(name = "userentity_reviews")
 //    private UserEntity user;
 //
@@ -41,9 +41,6 @@ public class ReviewsEntity {
     @ManyToOne
     @JoinColumn(name = "menu_dish_reviews")
     private MenuDishEntity menu_dish;
-
-
-
 
     //    user_id
 
