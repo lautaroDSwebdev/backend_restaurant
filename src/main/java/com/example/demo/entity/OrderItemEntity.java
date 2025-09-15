@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,10 +19,10 @@ public class OrderItemEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotNull
     private int Quantity;
 
-    @NotBlank
+    @NotNull
     private int price;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -54,21 +55,21 @@ public class OrderItemEntity {
         ListOrdersStates = listOrdersStates;
     }
 
-    @NotBlank
+    @NotNull
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(@NotBlank int price) {
+    public void setPrice(@NotNull int price) {
         this.price = price;
     }
 
-    @NotBlank
+    @NotNull
     public int getQuantity() {
         return Quantity;
     }
 
-    public void setQuantity(@NotBlank int quantity) {
+    public void setQuantity(@NotNull int quantity) {
         Quantity = quantity;
     }
 }

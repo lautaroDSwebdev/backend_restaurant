@@ -65,5 +65,11 @@ public class TablesRestaurantEntity {
         this.numberOfTable = numberOfTable;
     }
 
+    public List<ReservationsEntity> getReservationsTable() {
+        return reservationsTable;
+    }
 
+    public void setReservationsTable(List<ReservationsEntity> reservationsTable) {
+        this.reservationsTable = reservationsTable;
+    }
 }

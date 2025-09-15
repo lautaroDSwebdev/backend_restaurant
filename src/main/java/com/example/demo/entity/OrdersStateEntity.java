@@ -21,12 +21,14 @@ public class OrdersStateEntity {
     private Long id;
 
     @NotBlank
-    private int status;
+    @Column(name = "estado_del_pedido")
+    private String status;
 
 
 //    @ManyToOne
 //    @JoinColumn(name = "user_orderstate_id")
 //    private UserEntity user_orderstate;
+
 
     public Long getId() {
         return id;
@@ -36,12 +38,11 @@ public class OrdersStateEntity {
         this.id = id;
     }
 
-    @NotBlank
-    public int getStatus() {
+    public @NotBlank String getStatus() {
         return status;
     }
 
-    public void setStatus(@NotBlank int status) {
+    public void setStatus(@NotBlank String status) {
         this.status = status;
     }
 }

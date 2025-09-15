@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,12 +19,14 @@ public class MenuDishEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+//    @Size(max = 50)
     @NotBlank
-    @Size(max = 50)
+    @Column(name = "nombre_del_plato")
     private String menu;
 
-    @NotBlank
-    private Float price;
+    @NotNull
+    @Column(name = "precio_plato")
+    private int price;
 
     @ManyToOne
     @JoinColumn(name = "category_menu_id", nullable = false)
@@ -35,7 +38,9 @@ public class MenuDishEntity {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<InventoryItemEntity> inventory_intem;
-//   category_id
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ReviewsEntity> reviews_menu;
 
     public CategoryEntity getCategory_id() {
         return category_id;
@@ -61,11 +66,11 @@ public class MenuDishEntity {
         this.inventory_intem = inventory_intem;
     }
 
-    public @NotBlank @Size(max = 50) String getMenu() {
+    public @NotBlank String getMenu() {
         return menu;
     }
 
-    public void setMenu(@NotBlank @Size(max = 50) String menu) {
+    public void setMenu(@NotBlank String menu) {
         this.menu = menu;
     }
 
@@ -77,11 +82,20 @@ public class MenuDishEntity {
         this.order_menu = order_menu;
     }
 
-    public @NotBlank Float getPrice() {
+    @NotNull
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(@NotBlank Float price) {
+    public void setPrice(@NotNull int price) {
         this.price = price;
+    }
+
+    public List<ReviewsEntity> getReviews_menu() {
+        return reviews_menu;
+    }
+
+    public void setReviews_menu(List<ReviewsEntity> reviews_menu) {
+        this.reviews_menu = reviews_menu;
     }
 }

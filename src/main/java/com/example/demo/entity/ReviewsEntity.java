@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,11 +21,13 @@ public class ReviewsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //    @Size(max = 5)
-    @NotBlank
+//    @Size(max = 5)
+    @NotNull
+    @Column(name = "rango")
     private int range;
 
     @NotBlank
+    @Column(name = "comentario")
     private String coment;
 
     @NotBlank
@@ -41,10 +44,6 @@ public class ReviewsEntity {
     @ManyToOne
     @JoinColumn(name = "menu_dish_reviews")
     private MenuDishEntity menu_dish;
-
-    //    user_id
-
-//    menu_dish_id
 
     public @NotBlank String getComent() {
         return coment;
@@ -70,12 +69,20 @@ public class ReviewsEntity {
         this.id = id;
     }
 
-    @NotBlank
+    public MenuDishEntity getMenu_dish() {
+        return menu_dish;
+    }
+
+    public void setMenu_dish(MenuDishEntity menu_dish) {
+        this.menu_dish = menu_dish;
+    }
+
+    @NotNull
     public int getRange() {
         return range;
     }
 
-    public void setRange(@NotBlank int range) {
+    public void setRange(@NotNull int range) {
         this.range = range;
     }
 }

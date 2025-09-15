@@ -63,4 +63,12 @@ public class ReservationsEntity {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public TablesRestaurantEntity getTable_reservation() {
+        return table_reservation;
+    }
+
+    public void setTable_reservation(TablesRestaurantEntity table_reservation) {
+        this.table_reservation = table_reservation;
+    }
 }
