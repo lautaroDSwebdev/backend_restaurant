@@ -22,7 +22,7 @@ public class CategoryEntity {
     @NotBlank
     private String category_name;
 
-    @OneToMany(mappedBy = "category_id")
+    @OneToMany
     private List<MenuDishEntity> ListMenuDishes;
 
     public @NotBlank String getCategory_name() {

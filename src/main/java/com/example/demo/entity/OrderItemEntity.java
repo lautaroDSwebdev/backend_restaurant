@@ -25,10 +25,10 @@ public class OrderItemEntity {
     @NotNull
     private int price;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany
     private List<OrdersStateEntity> ListOrdersStates;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany
     private List<MenuDishEntity> ListDiches;
 
     public Long getId() {

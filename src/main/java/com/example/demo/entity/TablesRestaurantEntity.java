@@ -28,7 +28,7 @@ public class TablesRestaurantEntity {
     @NotBlank
     private String location;
 
-    @OneToMany(mappedBy = "table_reservation")
+    @OneToMany
     private List<ReservationsEntity> reservationsTable;
 
     @NotNull(message = "la capacidad no puede ser nula")

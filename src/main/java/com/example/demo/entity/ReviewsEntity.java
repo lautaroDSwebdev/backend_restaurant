@@ -42,7 +42,7 @@ public class ReviewsEntity {
 //    private UserEntity user_review;
 //
     @ManyToOne
-    @JoinColumn(name = "menu_dish_reviews")
+    @JoinColumn(name = "menu_dish_reviews", nullable = false)
     private MenuDishEntity menu_dish;
 
     public @NotBlank String getComent() {

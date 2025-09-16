@@ -39,7 +39,7 @@ public class MenuDishEntity {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<InventoryItemEntity> inventory_intem;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "menu_dish")
     private List<ReviewsEntity> reviews_menu;
 
     public CategoryEntity getCategory_id() {

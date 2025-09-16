@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 //import org.springframework.security.core.userdetails.User;
 
 import java.util.List;
+//@Builder
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
 @Entity
 public class OrdersStateEntity {
 
@@ -20,7 +20,7 @@ public class OrdersStateEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+//    @NotBlank
     @Column(name = "estado_del_pedido")
     private String status;
 
