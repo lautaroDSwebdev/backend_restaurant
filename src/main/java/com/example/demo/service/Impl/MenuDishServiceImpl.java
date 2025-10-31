@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 public class MenuDishServiceImpl implements IMenuDishSerivice {
 
-    @Autowired
     private MenuDishRepo menu_repo;
 
     @Override

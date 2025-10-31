@@ -20,26 +20,26 @@ public class MenuDishEntity {
     private Long id;
 
 //    @Size(max = 50)
-    @NotBlank
-    @Column(name = "nombre_del_plato")
+//    @NotBlank
+    @Column(name = "menu")
     private String menu;
 
-    @NotNull
-    @Column(name = "precio_plato")
+//    @NotNull
+    @Column(name = "price")
     private int price;
 
     @ManyToOne
-    @JoinColumn(name = "category_menu_id", nullable = false)
+    @JoinColumn(name = "category")
     private CategoryEntity category_id;
 
     @ManyToOne
-    @JoinColumn(name = "orderitem_menu_id", nullable = false)
+    @JoinColumn(name = "ordermenu")
     private OrderItemEntity order_menu;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<InventoryItemEntity> inventory_intem;
+    @OneToMany
+    private List<InventoryItemEntity> inventory_item;
 
-    @OneToMany(mappedBy = "menu_dish")
+    @OneToMany
     private List<ReviewsEntity> reviews_menu;
 
     public CategoryEntity getCategory_id() {
@@ -58,12 +58,12 @@ public class MenuDishEntity {
         this.id = id;
     }
 
-    public List<InventoryItemEntity> getInventory_intem() {
-        return inventory_intem;
+    public List<InventoryItemEntity> getInventory_item() {
+        return inventory_item;
     }
 
-    public void setInventory_intem(List<InventoryItemEntity> inventory_intem) {
-        this.inventory_intem = inventory_intem;
+    public void setInventory_item(List<InventoryItemEntity> inventory_item) {
+        this.inventory_item = inventory_item;
     }
 
     public @NotBlank String getMenu() {
